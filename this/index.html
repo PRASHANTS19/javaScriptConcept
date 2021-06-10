@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this</title>
+</head>
+<body>
+    <script>
+// this refers to the object is belongs to
+    // it has different values depending on where it is used
+
+
+
+    //    1) Alone it refers to global object
+     console.log(this); //output global obj that is window object
+
+
+
+
+    // 2) in regular function this refers to global object
+     function eg (){
+         var add = 2+2;
+         console.log(add);
+         console.log(this);  //output global obj that is window object
+     }
+     eg();
+
+
+
+
+    // 3) in a method this refers to owner Object
+     const obj = {//object
+         name: "bhavesh gupta",
+         fun: function(){//method
+             // console.log(obj.name);
+             var add = 2+2;
+             console.log(add);
+             console.log(this);
+         }
+     }
+    // obj.fun(); // output : this will return owner object that is OBJ which has name and fun
+
+
+
+
+
+    // 4)in a function , in strict mode this is undefined
+    "use strict"
+    function eg2 (){
+         var add = 2+2;
+         console.log(add);
+         console.log(this); //undefined because of strict mode
+     }
+     eg2();
+
+
+
+     
+    </script>
+</body>
+</html>

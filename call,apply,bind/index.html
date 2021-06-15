@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callFunction</title>
+</head>
+<body>
+    <script>
+// 1) call() method
+        // *pre defined js funciton
+        // *with call() an Object can use a method belonging to another Object
+    const channel1 = {
+        name: "channel 1",
+        purpose: "programing",
+        description: function(){
+            return console.log(`this is ${this.name} purpose is ${this.purpose}`);
+        }
+    }
+    // channel1.description();
+    const channel2 = {
+        name: "channel 2",
+        purpose: "workout",
+      
+        }
+    // channel1.description.call(channel2)
+
+// ************************************
+
+    // *using argument
+    const channel01 = {
+        name: "channel 01",
+        purpose: "programing",
+        description: function(firstargument,secargument){
+            return console.log(`this is ${this.name} purpose is ${this.purpose}, i would like to give ${firstargument} likes plz ${secargument}`);
+        }
+    }
+
+     function description(firstargument,secargument){
+            return console.log(`this is ${this.name} purpose is ${this.purpose}, i would like to give ${firstargument} likes plz ${secargument}`);
+        }
+    // channel01.description("5", "Subscribe");
+    const channel02 = {
+        name: "channel 02",
+        purpose: "workout",
+        }
+    // channel01.description.call(channel02, 4, "sUbScRibe");
+
+
+// ***************************************************************************
+
+
+
+// 2) apply() method
+
+        // similar to call method 
+        // just the difference is call takes single single argument
+        // apply takes argument as an array - when we give argument we will have to give it in array
+        // console.log("using apply method");
+    // channel01.description.apply(channel02,[ 4,"sUbScRibe"]);
+
+    
+// 3) bind() method
+//         we can bind an object to a common function, so that the function gives different result when it is needed
+        var x = description.bind(channel02 , 4 ,"subscribe our channle");
+        var y = description.bind(channel01 , 5 ,"subscribe");
+        y();
+        x();
+    </script>
+</body>
+</html>

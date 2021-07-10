@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>functions</title>
+</head>
+<body>
+    <script>
+        // 1: A Function as a Statement
+        function x(){
+            // statement ...
+        }
+        // 2: A Function as an Expression
+        let add = function (num1,num2){
+         let sum = num1+ num2; 
+         return sum;
+        }
+
+        let res = add(8,9);
+        console.log(res);// 17
+        
+        // 3 An Arrow Function
+        const x = () => {
+            //  return statement ....
+        }
+    </script>
+</body>
+</html>

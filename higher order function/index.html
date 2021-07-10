@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>higherOrderFun</title>
+</head>
+<body>
+    <script>
+        //A function which takes another function as an argument,
+        //and returns a function is HOF
+    const animals = [
+    { name: 'Milo', type: 'cat', eyes: 2 },
+    { name: 'Peluza', type: 'cat', eyes: 2 },
+    { name: 'Yummy', type: 'cat', eyes: 2 },
+    { name: 'Doggy', type: 'dog', eyes: 2 },
+    { name: 'Sammy', type: 'dog', eyes: 2 },
+];
+
+// using map
+// map function iterates through every element, and makes new array
+            // const ani = (anima) => {
+            //     var x = []
+            //     anima.map((item)=> {
+            //        x.push(item.name)
+            //         // console.log(x);
+            //     })
+            //     console.log(x);
+
+            // }
+
+            // ani(animals)
+            // console.log('all animals (map)');
+
+
+
+
+// using forEach
+            // const pashu = (pash) =>{
+            //     var b = []
+            //     pash.forEach((item)=>{
+            //         b.push(item.name)
+            //     })
+            //     console.log(b);
+
+            // } 
+                
+            // pashu(animals)
+
+// using filter
+// The Array.filter() method creates an array filled with all array elements that pass a test (provided as a function).
+            // const ani = (anima) => {
+            //     var x = []
+            //        anima.filter((item)=>{
+            //            if(item.type == 'dog'){
+            //                x.push(item.type)
+            //            }
+            //        })
+            //     console.log(x);
+            // }
+
+            // ani(animals)
+            // console.log('using filter');
+
+
+// using find
+// The Array.find() method returns the value of the first element in an array that passes a test (provided as a function).
+
+            // const ani = (anima) => {
+            //        anima.find((item,i)=>{
+            //            if(item.name == 'Sammy'){
+            //               return console.log(item,i);
+            //            }
+            //        })
+            // }
+            // ani(animals)
+            // console.log('using find');
+
+            // const fusionedAnimals = animals.reduce((newName, animal) => newName + animal.name, '')
+//reduce
+// there is an accumulator and present value it returns the summation of array
+// we can initialize present in the function itself
+
+                // const fusionedAnimals = (animal) => {
+                //     var x = []
+                //     animal.reduce((accu,presnt) => {
+                //         return x = accu + presnt.name + ' '
+                //         },'')
+                //     console.log(x);
+                //     }
+                //  fusionedAnimals(animals)
+
+//every function
+// it will check every element in the array and compare the condition
+
+// The method executes the function once for each element present in the array:
+// If it finds an array element where the function returns a false value, every() returns false (and does not check the remaining values)
+// If no false occur, every() returns true
+
+                    // const allDogs = (animal) => {
+                    //     animal.every((item)=>{
+                    //         if(item.type === 'dog'){
+                    //             return console.log(true);
+                    //         } 
+                    //         else{
+                    //             return console.log(false);
+                    //         }
+                    //     })
+                    // }
+                    // allDogs(animals)
+
+
+
+
+                   
+
+// map(): iterate through the array: it will return a new array
+// filter(): // return true 
+// reduce(): // get a single value as an output 
+
+// const higherOrderFunctionsModule = (function () {
+
+//     const init = function () {
+//         //Get all animals (map)
+//         console.log('---');
+//         console.log('all animals (map)');
+//         console.log(getAnimals);
+
+//         //Get all animals (forEach)
+//         console.log('---');
+//         console.log('all animals (forEach)');
+//         console.log(getAnimals2);
+
+//         //Get only dogs
+//         console.log('---');
+//         console.log('only dogs');
+//         console.log(dogs);
+
+//         //Get only sammy
+//         console.log('---');
+//         console.log('only one item');
+//         console.log(sammy);
+
+//         //Get all the names together
+//         console.log('---');
+//         console.log('fusionAnimals');
+//         console.log(fusionedAnimals);
+
+//         //Check if some of the animals are cats
+//         console.log('---');
+//         console.log('check if there are cats');
+//         console.log(thereAreCats);
+
+//         //Check if all the items are dogs
+//         console.log('---');
+//         console.log('check if ALL are dogs');
+//         console.log(areAllDogs);
+
+//         //Get all dogs and fusion them
+//         console.log('---');
+//         console.log('Merge the dogs and fusion them');
+//         console.log(getDogsAndFusionThem);
+//     }
+//     // map 
+//     const getAnimals = animals.map((animal) => {
+//         return `${animal.name} is a ${animal.type}`
+//     })
+
+//     // forEach
+//     const getAnimals2 = animals.forEach(animal => `${animal.name} is a ${animal.type}`)
+
+//     //filter
+//     const dogs = animals.filter(animal => animal.type === 'dog')
+
+//     //find
+//     const sammy = animals.find(animal => animal.name === 'Sammy')
+
+
+//     // reduce
+//     const fusionedAnimals = animals.reduce((newName, animal) => newName + animal.name, '')
+
+//     //some
+//     const thereAreCats = animals.some(animal => animal.type === 'cat')
+
+//     //every
+//     const areAllDogs = animals.every(animal => animal.type === 'dog');
+
+//     // chained method example 
+
+//     const getDogsAndFusionThem = animals.filter(animal => animal.type === 'dog').reduce((newName, animal) => newName + animal.name, '');
+
+// })
+
+
+        //first order function
+        // storing a function in a variable and passing that value in another
+        // function
+        
+
+
+
+
+
+
+
+
+
+//practice
+
+
+
+// eyes ko sort
+// const srt = (animals)=>{
+//              return animals.sort((a,b)=>{ 
+//               return a.eyes>b.eyes ? 1: -1
+//                        })
+// }
+// console.log(srt(animals));
+
+
+
+// const fun = () => {
+//     animals.map((janwar) => {
+//         console.log();
+//         var x = []
+//         x = x + `${janwar.eyes}`
+//         console.log(x);
+//     })
+
+  
+// //sorting on the basis of eye that is number
+// const eye = (animals) =>{
+//     return animals.sort((a,b)=>{
+//         return b.eyes - a.eyes
+//     })
+// }
+// console.log(eye(animals));
+
+//sorting on the basis of name that is string
+// const strngsrt = (animals) =>{
+//     return animals.sort((a,b)=>{
+//         if(a.name > b.name)
+//        {
+//         return 1;
+//        }
+//         else
+//         {
+//             return -1;
+//         }
+//     })
+// }
+// console.log(strngsrt(animals));
+
+
+
+
+
+
+
+//greater then wala
+// const gret = (animals)=>{
+//     return animals.filter((item)=>{
+//         if (item.eyes >= 5)
+//         return true
+//     })
+// }
+
+
+// console.log(gret(animals));
+
+
+
+
+
+// fun()
+// const summationCredit = (data) =>
+//   data.reduce((accum, item) => accum + item.credit, 0);
+
+
+// eyes ko add
+// const add = (animals) => {  
+//     return animals.reduce((accu,current)=> accu + current.eyes ,0)   ;
+// }
+
+// console.log(add(animals));
+
+
+// console.log(add(animals));
+
+
+// const summationCredit = (data) =>
+//   data.reduce((accum, item) => accum + item.credit, 0);
+
+
+
+//   console.log("sum of credit", summationCredit(data));
+
+
+
+
+    </script>
+</body>
+</html>

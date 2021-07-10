@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = ["a", "b", "c"];
+
+
+        const arr1 = arr; //copying the reference
+        arr1[0] = "d";
+        console.log("1.", arr, arr1);
+
+
+        const arrCopy = arr.slice(); //making new array without changing the reference
+        arrCopy[0] = "Hi";
+        console.log("2.", arr, arrCopy);
+
+
+        const arrCopy1 = [...arr];
+        arrCopy1[0] = "Bye";
+        console.log("2.", arr, arrCopy1);//making new array without changing the reference
+
+
+        // Rest
+
+        const [first, second, ...arr2] = ["a", "b", "c", "d"];
+        console.log("3.", first, second, arr2); // a,b,cd
+    </script>
+</body>
+</html>

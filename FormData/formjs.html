@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fromJS</title>
+</head>
+<body>
+    <div class="wrapper">
+        <form action="#" id="myform" class="form">
+            <input type="text" name="email" id="email" class="str" placeholder="text">
+            <input type="password" name="password" id="password" class="str1" placeholder="password">
+            <input type="submit" name="submit" class="submit" >
+        </form>
+    </div>
+    <script>
+        const submit = document.querySelector('.form')
+        submit.addEventListener("submit", function(e) {
+          e.preventDefault();
+          const formData = new FormData(submit);
+          console.log(formData);
+          const data = Array.from(formData.entries())
+          console.log(data);
+          const newData = data.reduce((result,current)=>{
+            result[current[0]] = current[1];
+            return result;
+          },{})
+          console.log(newData);
+        })
+    </script>
+</body>
+</html>
